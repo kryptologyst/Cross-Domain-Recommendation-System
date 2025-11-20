@@ -1,0 +1,27 @@
+"""Default configuration for cross-domain recommendation system."""
+
+random_seed: 42
+mf_n_factors: 50
+
+evaluation:
+  k_values: [5, 10, 20]
+
+data:
+  source_domain: "books"
+  target_domain: "movies"
+  test_size: 0.2
+  min_interactions_per_user: 5
+
+models:
+  simple_cross_domain:
+    enabled: true
+  matrix_factorization:
+    enabled: true
+    n_factors: 50
+    max_iter: 200
+  content_based:
+    enabled: true
+
+logging:
+  level: "INFO"
+  file: "cross_domain_rec.log"
